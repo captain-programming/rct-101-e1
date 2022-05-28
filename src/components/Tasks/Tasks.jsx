@@ -1,16 +1,34 @@
 import React from "react";
+import { Task } from "../Task/Task";
 import styles from "./tasks.module.css";
+import emptyIcon from "../../assets/empty.svg";
 
-const Tasks = () => {
+
+const Tasks = ({tasks, handleUpdateTask, handleRemoveTask}) => {
   // NOTE: do not delete `data-cy` key value pair
+
   return (
     <>
-      <ul data-cy="tasks" className={styles.tasks}>
-        {/* Task List */}
-      </ul>
+      {tasks.length > 0 ?(
+        <ul data-cy="tasks" className={styles.tasks}>
+          {tasks.map(task => (
+            <Task
+              key={task.id} 
+              task={task}
+              handleUpdateTask={handleUpdateTask}
+              handleRemoveTask={handleRemoveTask}
+            />
+            ))}
+        </ul>
+      ) : (
       <div data-cy="tasks-empty" className={styles.empty}>
-        {/* Show when No Tasks are present */}
+        <img src={emptyIcon} alt="Empty task list" />
+        <div>
+         <b>Empty List</b>
+        </div>
+        <div>Add a new task above</div>
       </div>
+      )}
     </>
   );
 };

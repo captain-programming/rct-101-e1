@@ -1,3 +1,26 @@
 .task {
-  /* Sample  */
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  padding: 10px;
+}
+.list{
+  display: flex;
+  flex: 3;
+}
+.counterdiv{
+  display: flex;
+  flex: 2;
+}
+.inputbox{
+  margin-right: 20px;
+  margin-left: -10px;
+}
+
+.removeButton{
+  opacity: 0;
+}
+
+.removeButton:hover{
+  opacity: 1;
 }

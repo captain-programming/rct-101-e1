@@ -1,7 +1,8 @@
-.tasks {
-  /* sample */
+.empty {
+  padding: 10px;
 }
 
-.empty {
-  /* sample */
+.empty img{
+  width: 200px;
+  height: 250px;
 }
